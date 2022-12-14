@@ -16,6 +16,7 @@ import {
   useColorMode,
   Center,
 } from '@chakra-ui/react';
+import {BsCart3} from "react-icons/bs"
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const NavLink = () => (
@@ -40,13 +41,13 @@ export default function Navbar() {
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box> <Avatar src='https://images.ctfassets.net/wtodlh47qxpt/25FSYFuEtGct8NSrtpKe6d/b602f6fe0bf294e6a6dff5d7648bf594/KFC_Logo.svg'/> </Box>
-
+         
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              <Button>
+                SignUP
               </Button>
-
+             <Button>   <BsCart3/> </Button>
               <Menu>
                 <MenuButton
                   as={Button}
