@@ -3,7 +3,7 @@ import {
   Box,
   Flex,
   Avatar,
-  Link,
+
   Button,
   Menu,
   MenuButton,
@@ -15,9 +15,14 @@ import {
   Stack,
   useColorMode,
   Center,
+  StylesProvider,
 } from '@chakra-ui/react';
 import {BsCart3} from "react-icons/bs"
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import {Link} from "react-router-dom"
+import styles from "./AllStyles/navbar.module.css"
+
+
 
 const NavLink = () => (
   <Link
@@ -40,14 +45,23 @@ export default function Navbar() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box> <Avatar src='https://images.ctfassets.net/wtodlh47qxpt/25FSYFuEtGct8NSrtpKe6d/b602f6fe0bf294e6a6dff5d7648bf594/KFC_Logo.svg'/> </Box>
+          <Box  border="0px solid black" display={"flex"} justifyContent={"space-around"} width="200px" alignItems={"center"}  > 
+          <Link to="/">
+          <Avatar src='https://images.ctfassets.net/wtodlh47qxpt/25FSYFuEtGct8NSrtpKe6d/b602f6fe0bf294e6a6dff5d7648bf594/KFC_Logo.svg'/> 
+          </Link>
+         
+          <Link to="/menu">Menu</Link>
+          <Link to="/deals">Deals</Link>
+          </Box>
          
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               <Button>
                 SignUP
               </Button>
-             <Button>   <BsCart3/> </Button>
+             <Button className={styles.notification} >  <BsCart3/> 
+             <span className={styles.badge}>3</span>
+             </Button>
               <Menu>
                 <MenuButton
                   as={Button}

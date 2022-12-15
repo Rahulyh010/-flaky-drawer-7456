@@ -1,0 +1,16 @@
+.fot1{
+    margin:auto;
+    margin-left:100px;
+    border:0px solid white;
+    padding:10px;
+}
+
+.fot1>div>p{
+    
+    margin-bottom: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: capitalize;
+    
+
+
+}
