@@ -38,7 +38,7 @@ const NavLink = () => (
   </Link>
 );
 
-export default function Navbar() {
+export default function Navbar({total}) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -59,9 +59,13 @@ export default function Navbar() {
               <Button>
                 SignUP
               </Button>
-             <Button className={styles.notification} >  <BsCart3/> 
-             <span className={styles.badge}>3</span>
+              <Link to="/cart/:id">
+              <Button className={styles.notification} >  <BsCart3/> 
+             <span className={styles.badge}>{total}</span>
+             
              </Button>
+              </Link>
+            
               <Menu>
                 <MenuButton
                   as={Button}

@@ -1,0 +1,33 @@
+.top{
+    width:100%;
+    background-color: black;
+    color:white;
+    text-align: center;
+    height:60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:23px;
+    margin-top:40px;
+
+}
+
+.btn1{
+    color: black;
+    background-color:red;
+    margin-left: 20px;
+}
+
+.container{
+    width:80%;
+    height:auto;
+    border:1px solid blue;
+    margin-left:20%;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap:10px;
+
+}
+

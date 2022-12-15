@@ -1,14 +1,18 @@
 import Navbar from "./navbar";
 import { Box, Button, ButtonGroup, Center, Heading, Image, SimpleGrid,Text } from "@chakra-ui/react";
 import { Flex, Spacer } from '@chakra-ui/react'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./AllStyles/home.module.css"
 
 import Footer from "./footer";
+import { CartContext } from "../Context/Cart12";
 
 function Home(){
 
     const [isLoading,setIsLoading]= useState(true)
+
+    const {total}=useContext(CartContext)
+  
 
     setTimeout(()=>{
       setIsLoading(false)
@@ -16,7 +20,7 @@ function Home(){
 
     return isLoading ? 
     <>
-     <Navbar/>
+     <Navbar total={total} />
     <Center>
        
         <Image  src="https://online.kfc.co.in/static/media/KFC_Loader_Gif.66979359.gif"/>
@@ -27,7 +31,7 @@ function Home(){
     
     (
         <>
-        <Navbar/>
+        <Navbar total={total}/>
 
    <Box className={styles.top}>
         LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN

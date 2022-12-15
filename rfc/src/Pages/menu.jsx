@@ -1,6 +1,7 @@
 import { Card,Box, CardHeader, CardBody, CardFooter,Image,Stack,Heading,Text,Divider,ButtonGroup,Button, StylesProvider } from '@chakra-ui/react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import styles from "./AllStyles/menu.module.css"
 import Navbar from './navbar'
 
@@ -84,9 +85,12 @@ BEVERAGES
       <Button variant='ghost' colorScheme='gray'>
         Buy now
       </Button>
+      <Link to={`/cart/${e.id}`}>
       <Button variant='solid' colorScheme='red'>
-        Add to cart
+        Add to cart+ 
       </Button>
+      </Link>
+      
     </ButtonGroup>
   </CardFooter>
 </Card>
