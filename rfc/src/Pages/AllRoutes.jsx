@@ -4,6 +4,7 @@ import Login from "./Login"
 import Navbar from "./navbar"
 import Menu from "./menu"
 import Cart from "./cartpage"
+import Map from "./map"
 
 function AllRoutes(){
 
@@ -13,6 +14,7 @@ function AllRoutes(){
              <Route path="/login" element={<Login/>}/>
              <Route path="/menu" element={<Menu/>}/>
              <Route path="/cart/:id" element={<Cart/>}/>
+             <Route path="/map" element={<Map/>}/>
         </Routes>
     )
 }

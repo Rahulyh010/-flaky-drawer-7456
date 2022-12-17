@@ -17,6 +17,7 @@ import {
   Center,
   StylesProvider,
 } from '@chakra-ui/react';
+
 import {BsCart3} from "react-icons/bs"
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import {Link} from "react-router-dom"
@@ -56,9 +57,13 @@ export default function Navbar({total}) {
          
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
-              <Button>
+             
+             <Link to="/login">
+             <Button>
                 SignUP
               </Button>
+             </Link>
+             
               <Link to="/cart/:id">
               <Button className={styles.notification} >  <BsCart3/> 
              <span className={styles.badge}>{total}</span>

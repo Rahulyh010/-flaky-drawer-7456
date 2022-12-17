@@ -6,6 +6,7 @@ import styles from "./AllStyles/home.module.css"
 
 import Footer from "./footer";
 import { CartContext } from "../Context/Cart12";
+import Delivery from "./Delivery";
 
 function Home(){
 
@@ -36,7 +37,9 @@ function Home(){
    <Box className={styles.top}>
         LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN
 
-    <Button className={styles.btn1}>Order Now</Button>
+    <>
+          <Delivery/>
+    </>
     </Box>
         <Box className={styles.slider}>
             <Image  src="https://images.ctfassets.net/wtodlh47qxpt/4gztBB8yAvtp6jV7JAuLD/093fddbb77a78a44a4d3d5e066c592de/KFC_Peri_Peri_Banner__1440x396px.jpg?w=1536&fit=fill&fm=webp"/>
