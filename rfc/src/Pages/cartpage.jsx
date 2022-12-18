@@ -6,52 +6,69 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import {Link} from "react-router-dom"
 import { CartContext } from "../Context/Cart12";
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from '@chakra-ui/react'
 
 function Cart(){
 
     const {data,setData,amount,setAmount}=useContext(CartContext)
+    const [dis,setDis]=useState("flex")
+    const [top,setTop]= useState("0px")
 
+    function display (){
+        setDis("none") 
+        setTop("40px")
+    }
     let totalitems=data.length
 
 const {id}=useParams()
 
 
-
-function Alert(){
-    let i=1;
-
-   if(i==1){
-    return (
-        alert("Warning Dont refresh Your Page You Will Loose your all added items")
-    )
-   }
+function getdata(){
+  axios.get(`http://localhost:3000/userContent/${id}`)
+  .then((res)=>{
+      setData([...data,res.data])
+      setAmount(amount+res.data.price)
+      
+  })
+  .catch((error)=>{
+      console.log(error)
+  })
 }
 
 
 
 
-
     useEffect(()=>{
-        axios.get(`http://localhost:3000/userContent/${id}`)
-        .then((res)=>{
-            setData([...data,res.data])
-            setAmount(amount+res.data.price)
-            Alert()
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
+       getdata()
     
     },[])
 
     console.log(data)
+
+    function handleremove(i){
+       data.splice(i,1)
+       console.log(data)
+       setData(data)
+     
+    }
 
     return (
         
         <Box>
           
         <Navbar total={totalitems}  />
-        <Box className={styles.top}>
+
+        <Alert display={dis}   status='warning'>
+    <AlertIcon  />
+    Dont refresh page the Added itmes will be lost <Button onClick={display} variant={"ghost"} >Hide</Button>
+  </Alert>
+
+        <Box className={styles.top} marginTop={top} >
         LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN
 
     <Button className={styles.btn1}>Order Now</Button>
@@ -64,9 +81,9 @@ function Alert(){
 
 <Box className={styles.container}>
   
-  {data.map((e)=>{
+  {data.map((e,i)=>{
     return (
-        <Card maxW='sm'>
+        <Card key={i} maxW='sm'>
         <CardBody>
           <Image
             src={e.img}
@@ -86,7 +103,7 @@ function Alert(){
         <Divider />
         <CardFooter>
           <ButtonGroup spacing='2'>
-            <Button variant='ghost' colorScheme='gray'>
+            <Button variant='ghost' colorScheme='gray' onClick={()=>handleremove(i)} >
               Remove
             </Button>
             <Link to={`/cart/${e.id}`}>

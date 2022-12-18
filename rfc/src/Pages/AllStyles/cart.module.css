@@ -9,7 +9,7 @@
     justify-content: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:23px;
-    margin-top:40px;
+    
 
 }
 
@@ -22,8 +22,9 @@
 .container{
     width:80%;
     height:auto;
-    border:1px solid blue;
-    margin-left:20%;
+    margin: auto;
+    border:0px solid blue;
+
     display:grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;

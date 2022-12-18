@@ -3,7 +3,7 @@ import styles from "./AllStyles/footer.module.css"
 function Footer(){
   return (
     <>
-      <SimpleGrid  className={styles.fot1}  columns={7} spacing={10}>
+      <SimpleGrid  className={styles.fot1}  columns={{sm: 2, md: 4 ,lg: 7}} spacing={10}>
         <Box>
           <Image src="https://c8.alamy.com/comp/2BWM4EJ/moscow-russia-november-16-2019-a-lots-of-kfc-chicken-hot-wings-or-strips-in-bucket-of-kfc-kentucky-fried-chicken-fast-food-2BWM4EJ.jpg" />
         </Box>

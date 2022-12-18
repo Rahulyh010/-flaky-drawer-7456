@@ -21,6 +21,9 @@ function Home(){
 
     return isLoading ? 
     <>
+    <div style={{width:"200px",height:"200px",border:"1px solid black"}} >
+
+</div>
      <Navbar total={total} />
     <Center>
        
@@ -52,11 +55,11 @@ function Home(){
          </Box>
 
        
-     <Box className={styles.category}>
+     <Box className={styles.category}  >
      <Heading as="h1" className={styles.cathead} >BROWSE CATEGORIES  <hr color="black" /></Heading> 
 
      <Box>
-            <SimpleGrid columns={4} spacing={10}>
+            <SimpleGrid columns={{sm: 2, md: 3 ,lg: 4}} spacing={10}>
   <Box bg="white" border="0px solid black" height='200px'>
     <Image w="100%" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT86.jpg?ver=22.82"/>
     <Text>CHICKEN BUCKET</Text>
@@ -96,12 +99,12 @@ function Home(){
 
      </Box>
 
-     <Box className={styles.footer}>
+     <Box className={styles.footer} marginTop={{sm:"700px",md:"400px",lg:'200px'}}  height="auto" >
 
-        <Box border={"0px solid white"} p={2} w="80%" marginLeft={"20%"}>
+        <Box border={"0px solid white"} p={2} w="80%" marginLeft={"20%"} marginTop={"auto"}>
     <Heading marginTop={"30px"} textAlign={"left"} as="h2">OFFERS & DEALS</Heading>
 
-    <SimpleGrid className={styles.deals}  columns={4} spacing={10} >
+    <SimpleGrid className={styles.deals}  columns={{sm: 2, md: 3 ,lg: 4}} spacing={10}  >
       <Box height={"350px"} border="0px solid white">
         <Image w="100%" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/lg/CHKZINGER.jpg"/>
         <Heading as='h3' size='lg' color={"red"} >1 PC FREE VEG</Heading>
