@@ -10,7 +10,7 @@ function Menu(){
 const [data,setData]= useState([])
 
     let getdata= ()=>{
-        axios.get(`http://localhost:3000/userContent`)
+        axios.get(`https://rfc-json-server.onrender.com/userContent`)
         .then((res)=>{
             console.log(res.data)
             setData(res.data)

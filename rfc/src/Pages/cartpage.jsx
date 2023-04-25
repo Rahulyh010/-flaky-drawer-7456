@@ -29,7 +29,7 @@ const {id}=useParams()
 
 
 function getdata(){
-  axios.get(`http://localhost:3000/userContent/${id}`)
+  axios.get(`https://rfc-json-server.onrender.com/userContent/${id}`)
   .then((res)=>{
       setData([...data,res.data])
       setAmount(amount+res.data.price)
